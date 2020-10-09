@@ -54,7 +54,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+uint8_t k;
 /* USER CODE END 0 */
 
 /**
@@ -161,11 +161,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, LD2_M_Pin|LD3_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : PA0 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  /*Configure GPIO pin : Button_Pin */
+  GPIO_InitStruct.Pin = Button_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(Button_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LD2_M_Pin LD3_Pin */
   GPIO_InitStruct.Pin = LD2_M_Pin|LD3_Pin;
@@ -185,8 +185,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 
 UNUSED(GPIO_Pin);
-for(uint32_t i=0; i<10000; i++)
+if(HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin)){
 HAL_GPIO_TogglePin(LD3_GPIO_Port, GPIO_PIN_9);
+}
+else{
+HAL_GPIO_TogglePin(LD3_GPIO_Port, GPIO_PIN_9);
+}
+for(uint32_t i=0; i<6000; i++);
+
 }
 /* USER CODE END 4 */
 
