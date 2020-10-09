@@ -10,7 +10,7 @@ Ukaz za utripanje modre LED: <b>HAL_GPIO_TogglePin(LD2_M_GPIO_Port, GPIO_PIN_8);
 
 Delay za pol sekunde: <b> HAL_Delay(500);</b>
 
-Ko pritisnemo na modro tipko na STM32L1 se nam vklopi ali izklopi zelena LED dioda.
+Ko pritisnemo na modro tipko na STM32L1 se nam <b>vklopi ali izklopi zelena LED dioda.</b>
 
-Pri pritisku na modro tipko se utripanje modre LED dioda ne spremeni.
+Pri pritisku na modro tipko se <b>  utripanje modre LED dioda ne spremeni.</b>
 
