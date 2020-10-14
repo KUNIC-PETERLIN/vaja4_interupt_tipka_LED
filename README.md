@@ -1,6 +1,6 @@
 # vaja4_interupt_tipka_LED
 
-Za digitalni vhod kot interrupt (GPIO_EXT…) uporabimo pin <b>PA0 (GPIO:EXTl)0</b>
+Za digitalni vhod kot interrupt (GPIO_EXT…) uporabimo pin <b>PA0 (GPIO:EXTl)</b>
 
 Naslov izhodnih pinov za zeleno in modro LED: <b>PC9 in PC8</b>
 
